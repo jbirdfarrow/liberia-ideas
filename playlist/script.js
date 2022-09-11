@@ -2,7 +2,7 @@
 $(function(){
 //set-up what ytapi needs for us to retrieve playlist data.  api-key, youtube-playlist-id, http-request-url, what data to filter for the response.
   var key = 'AIzaSyBPhkv9KDW8hG_czKGtIr40gQh6td29iVo';
-  var playlistId = 'PL1EzH8XlwSxtvRNex7RgnpqXasSJtrzUM';
+  var playlistId = 'PLOhQcs9nfW73zKktlSHLxlgAXBX2p8bZk';
   var URL = 'https://www.googleapis.com/youtube/v3/playlistItems';
   var options = {
     part: 'snippet', 
