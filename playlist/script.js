@@ -24,7 +24,7 @@ $(function(){
   // put ytvideoid into iframe src
   function mainVideo(id) {
     $('#video').html(`
-      <iframe width="560" height="315"    src="https://www.youtube.com/embed/${id}?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe width="560" height="315"    src="https://www.youtube.com/embed/${id}?rel=0&modestbranding=1&autohide=1&mute=0&showinfo=0&controls=0&autoplay=1" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   `);
  }
 //takes needed data from the api call such as video thumbnail and description, create a new <article> for each item found in the array then appened it to <main> e.g. 12 videos in a playlist = 12 items = create and appened 12 articles to the main part of the body.
