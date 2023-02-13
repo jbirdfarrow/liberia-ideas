@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>IDEAS Goodness</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html>
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
+  <title>Blue Community Assessment and Resources</title>
+</head>
+<body style="margin:0">
+  <div id="container">
+    <div id="pattern" class="pattern containerItem">
+      <div class="breadcrumb flat">
+	<a href="https://ideasforus-annual.glideapp.io" class="active">IDEAS app</a>
+	<a href="https://ideas-pe-r0z5.glideapp.io/">Tool</a>
+	<a href="https://chat.openai.com/chat">ChatGPT</a>
+	<a href="https://toolbox.google.com/factcheck/explorer">Fact Tool</a>
+	<a href="https://originality.ai/">Originality</a>
+	<a href="https://ideasforus.org/blog/">Blog</a>
+</div>
+    </div>
+    <div id="iframesContainer" class="containerItem">
+      <!-- All the iframes will be populated here -->
+    <div class="iframeSite" style="flex-grow: 1">
+      <iframe loading="lazy" src="//ideasforus-annual.glideapp.io?spider_tab_iframe" style="height: 100%; width: 100%"> </iframe>
+    </div><div class="iframeSite" style="flex-grow: 1">
+      <iframe loading="lazy" src="//ideas-pe-r0z5.glideapp.io/?spider_tab_iframe" style="height: 100%; width: 100%"> </iframe>
+    </div></div>
+  </div>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+<div class="nav-bottom">
+            <div class="popup-whatsapp fadeIn">
+                <div class="content-whatsapp -top"><button type="button" class="closePopup">
+                      <i class="material-icons icon-font-color">close</i>
+                    </button>
+                    <p>Hello, 😊 past your prompt. Please be patient..</p>
+                </div>
+                <div class="content-whatsapp -bottom">
+                  <input class="whats-input" id="whats-in" type="text" Placeholder="Send message..." />
+                    <button class="send-msPopup" id="send-btn" type="button">
+                        <i class="material-icons icon-font-color--black">send</i>
+                    </button>
+
+                </div>
+            </div>
+            <button type="button" id="whats-openPopup" class="whatsapp-button">
+                <img class="icon-whatsapp" src="https://cdn-icons-png.flaticon.com/512/134/134937.png">
+            </button>
+            <div class="circle-anime"></div>
+        </div>
+</body>
+
+<style>
+@import url(https://fonts.googleapis.com/css?family=Merriweather+Sans);
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+/* offset-x > | offset-y ^| blur-radius | spread-radius | color */
+@keyframes pulse {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+
+.nav-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-content: flex-end;
+  width: auto;
+  height: auto;
+  position: fixed;
+  z-index: 8;
+  bottom: 0px;
+  right: 0px;
+  padding: 5px;
+  margin: 0px;
+}
+@media (max-width: 360px) {
+  .nav-bottom {
+    width: 320px;
+  }
+}
+
+.whatsapp-button {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 60px;
+  height: 60px;
+  z-index: 8;
+  transition: 0.3s;
+  margin: 10px;
+  padding: 7px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: white;
+  /* offset-x > | offset-y ^| blur-radius | spread-radius | color */
+  -webkit-box-shadow: 1px 1px 6px 0px rgba(68, 68, 68, 0.705);
+  -moz-box-shadow: 1px 1px 6px 0px rgba(68, 68, 68, 0.705);
+  box-shadow: 1px 1px 6px 0px rgba(68, 68, 68, 0.705);
+}
+
+.circle-anime {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-content: center;
+  width: 60px;
+  height: 60px;
+  top: 15px;
+  right: 15px;
+  border-radius: 50%;
+  transition: 0.3s;
+  background-color: #77bb4a;
+  animation: pulse 1.2s 4s ease 4;
+}
+
+.popup-whatsapp {
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  bottom: 85px;
+  right: 6px;
+  transition: 0.5s;
+  border-radius: 10px;
+  background-color: white;
+  /* offset-x > | offset-y ^| blur-radius | spread-radius | color */
+  -webkit-box-shadow: 2px 1px 6px 0px rgba(68, 68, 68, 0.705);
+  -moz-box-shadow: 2px 1px 6px 0px rgba(68, 68, 68, 0.705);
+  box-shadow: 2px 1px 6px 0px rgba(68, 68, 68, 0.705);
+  animation: slideInRight 0.6s 0s both;
+}
+.popup-whatsapp > div {
+  margin: 5px;
+}
+@media (max-width: 680px) {
+  .popup-whatsapp p {
+    font-size: 0.9em;
+  }
+}
+.popup-whatsapp > .content-whatsapp.-top {
+  display: flex;
+  flex-direction: column;
+}
+.popup-whatsapp > .content-whatsapp.-top p {
+  color: #585858;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 1em;
+}
+.popup-whatsapp > .content-whatsapp.-bottom {
+  display: flex;
+  flex-direction: row;
+}
+
+.closePopup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  margin: 0px 0px 15px 0px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #f76060;
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(68, 68, 68, 0.705);
+  -moz-box-shadow: 1px 1px 2px 0px rgba(68, 68, 68, 0.705);
+  box-shadow: 1px 1px 2px 0px rgba(68, 68, 68, 0.705);
+}
+.closePopup:hover {
+  background-color: #f71d1d;
+  transition: 0.3s;
+}
+
+.send-msPopup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  margin: 0px 0px 0px 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(68, 68, 68, 0.705);
+  -moz-box-shadow: 1px 1px 2px 0px rgba(68, 68, 68, 0.705);
+  box-shadow: 1px 1px 2px 0px rgba(68, 68, 68, 0.705);
+}
+.send-msPopup:hover {
+  background-color: #f8f8f8;
+  transition: 0.3s;
+}
+
+.is-active-whatsapp-popup {
+  display: flex;
+  animation: slideInRight 0.6s 0s both;
+}
+
+input.whats-input[type=text] {
+  width: 250px;
+  height: 40px;
+  box-sizing: border-box;
+  border: 0px solid #ffffff;
+  border-radius: 20px;
+  font-size: 1em;
+  background-color: #ffffff;
+  padding: 0px 0px 0px 10px;
+  -webkit-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+  outline: none;
+  transition: 0.3s;
+}
+@media (max-width: 420px) {
+  input.whats-input[type=text] {
+    width: 225px;
+  }
+}
+input.whats-input::placeholder {
+  /* Most modern browsers support this now. */
+  color: rgba(68, 68, 68, 0.705);
+  opacity: 1;
+}
+input.whats-input[type=text]:focus {
+  background-color: #f8f8f8;
+  -webkit-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+  transition: 0.3s;
+}
+
+.icon-whatsapp-small {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-whatsapp {
+  width: 45px;
+  height: 45px;
+}
+
+.icon-font-color {
+  color: #ffffff;
+}
+
+.icon-font-color--black {
+  color: #333333;
+}
+* {margin: 0; padding: 0;}
+body {
+	text-align: center;
+	padding-top: 100px;
+	background:url(https://ideasforus.org/wp-content/uploads/2022/06/Photo-Mar-08-4-39-27-PM-1.jpg) no-repeat;
+  background-size:cover;
+	font-family: 'Merriweather Sans', arial, verdana;
+}
+
+.breadcrumb {
+	/*centering*/
+	display: inline-block;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.35);
+	overflow: hidden;
+	border-radius: 5px;
+	/*Lets add the numbers for each link using CSS counters. flag is the name of the counter. to be defined using counter-reset in the parent element of the links*/
+	counter-reset: flag; 
+}
+
+.breadcrumb a {
+	text-decoration: none;
+	outline: none;
+	display: block;
+	float: left;
+	font-size: 1.1em;
+	line-height: 36px;
+	color: white;
+	/*need more margin on the left of links to accomodate the numbers*/
+	padding: 0 10px 0 60px;
+	background: #666;
+	background: linear-gradient(#666, #333);
+	position: relative;
+}
+/*since the first link does not have a triangle before it we can reduce the left padding to make it look consistent with other links*/
+.breadcrumb a:first-child {
+	padding-left: 46px;
+	border-radius: 5px 0 0 5px; /*to match with the parent's radius*/
+}
+.breadcrumb a:first-child:before {
+	left: 14px;
+}
+.breadcrumb a:last-child {
+	border-radius: 0 5px 5px 0; /*this was to prevent glitches on hover*/
+	padding-right: 20px;
+}
+
+/*hover/active styles*/
+.breadcrumb a.active, .breadcrumb a:hover{
+	background: #333;
+	background: linear-gradient(#333, #000);
+}
+.breadcrumb a.active:after, .breadcrumb a:hover:after {
+	background: #333;
+	background: linear-gradient(135deg, #333, #000);
+}
+
+/*adding the arrows for the breadcrumbs using rotated pseudo elements*/
+.breadcrumb a:after {
+	content: '';
+	position: absolute;
+	top: 0; 
+	right: -18px; /*half of square's length*/
+	/*same dimension as the line-height of .breadcrumb a */
+	width: 36px; 
+	height: 36px;
+	/*as you see the rotated square takes a larger height. which makes it tough to position it properly. So we are going to scale it down so that the diagonals become equal to the line-height of the link. We scale it to 70.7% because if square's: 
+	length = 1; diagonal = (1^2 + 1^2)^0.5 = 1.414 (pythagoras theorem)
+	if diagonal required = 1; length = 1/1.414 = 0.707*/
+	transform: scale(0.707) rotate(45deg);
+	/*we need to prevent the arrows from getting buried under the next link*/
+	z-index: 1;
+	/*background same as links but the gradient will be rotated to compensate with the transform applied*/
+	background: #666;
+	background: linear-gradient(135deg, #666, #333);
+	/*stylish arrow design using box shadow*/
+	box-shadow: 
+		2px -2px 0 2px rgba(0, 0, 0, 0.4), 
+		3px -3px 0 2px rgba(255, 255, 255, 0.1);
+	/*
+		5px - for rounded arrows and 
+		50px - to prevent hover glitches on the border created using shadows*/
+	border-radius: 0 5px 0 50px;
+}
+/*we dont need an arrow after the last link*/
+.breadcrumb a:last-child:after {
+	content: none;
+}
+/*we will use the :before element to show numbers*/
+.breadcrumb a:before {
+	content: counter(flag);
+	counter-increment: flag;
+	/*some styles now*/
+	border-radius: 100%;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	margin: 8px 0;
+	position: absolute;
+	top: 0;
+	left: 30px;
+	background: #444;
+	background: linear-gradient(#444, #222);
+	font-weight: bold;
+}
+
+
+.flat a, .flat a:after {
+	background: white;
+	color: black;
+	transition: all 0.5s;
+}
+.flat a:before {
+	background: yellow;
+  color:#000;
+	box-shadow: 0 0 0 1px #ccc;
+}
+.flat a:hover, .flat a.active, 
+.flat a:hover:after, .flat a.active:after{
+	background: #cc0000;
+  color:#eee;
+}
+
+  #container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .containerItem {
+    flex-grow: 1;
+  }
+
+  #iframesContainer {
+    display: flex;
+    flex-direction: row;
+    background-color: whitesmoke;
+    height: 550px;
+    margin: 10px;
+  }
+
+  .iframeSite {
+    background-color: white;
+    flex-grow: 1;
+    height: 800px;
+  }
+
+  .is-vishidden {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+
+  .pattern {
+    padding: 1em;
+    line-height: 1;
+  }
+
+  .f {
+    position: relative;
+  }
+
+  input {
+    display: block;
+    border: 1px solid #000;
+    background-color: white;
+  }
+
+  iframe {
+    display: block;
+    border: 1px solid #000;
+  }
+
+  input[type=search] {
+    width: 100%;
+    padding: 1em;
+    padding-right: 7em;
+    position: relative;
+    top: 0;
+  }
+
+  input[type=submit] {
+    position: absolute;
+    right: 0.75em;
+    top: 0.5em;
+    bottom: 0.5em;
+    z-index: 1;
+    width: 6em;
+    padding: 0;
+    cursor: pointer;
+  }
+</style>
+<link rel="stylesheet" href="https://unpkg.com/blocks.css/dist/blocks.min.css" />
+<!-- first, let's make the nav -->
+
+<nav class="layer">
+<ul>
+	<li class="block"><a target="load" href="">Lab</a></li>
+	<li class="block"><a href="//ideas-pe-r0z5.glideapp.io/dl/d0a5f4">Tool📲</a></li>
+  <li class="block"><a  href="https://chat.openai.com/chat">AI 🔲</a></li>
+	<li class="block"><a target="load" href="https://toolbox.google.com/factcheck/explorer">Fact✅</a></li>
+	<li class="block"><a target="load" href="https://ideasforus.com/blog">Blog💻</a></li>
+	<li class="block"><a target="load" href="//ideasforus-annual.glideapp.io/full">IDEAS📲</a></li>
+</ul>
+</nav>
+
+<!-- now let's create the layer that will initially cover the nav -->
+<section class="front page layer">
+  <div class="block">
+    <center><h3>IDEAS for US</h3><h4 class="block">$ecret 🥽Lab</h4></center></div>
+  
+<div class="frameContainer">
+    <iframe class="main_iframe" name="load" scrolling="yes"></iframe>
+</div>
+</section>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+<div class="nav-bottom">
+            <div class="popup-whatsapp fadeIn">
+                <div class="content-whatsapp -top"><button type="button" class="closePopup">
+                      <i class="material-icons icon-font-color">close</i>
+                    </button>
+                    <p>Hey, its Jaybird. Need Help?</p>
+                </div>
+                <div class="content-whatsapp -bottom">
+                  <input class="whats-input" id="whats-in" type="text" Placeholder="Send message..." />
+                    <button class="send-msPopup" id="send-btn" type="button">
+                        <i class="material-icons icon-font-color--black">send</i>
+                    </button>
+
+                </div>
+            </div>
+            <button type="button" id="whats-openPopup" class="whatsapp-button">
+                <img class="icon-whatsapp" src="https://cdn-icons-png.flaticon.com/512/134/134937.png">
+            </button>
+            <div class="circle-anime"></div>
+        </div>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+<script>
+	popupWhatsApp = () => {
+  
+  let btnClosePopup = document.querySelector('.closePopup');
+  let btnOpenPopup = document.querySelector('.whatsapp-button');
+  let popup = document.querySelector('.popup-whatsapp');
+  let sendBtn = document.getElementById('send-btn');
+
+  btnClosePopup.addEventListener("click",  () => {
+    popup.classList.toggle('is-active-whatsapp-popup')
+  })
+  
+  btnOpenPopup.addEventListener("click",  () => {
+    popup.classList.toggle('is-active-whatsapp-popup')
+     popup.style.animation = "fadeIn .6s 0.0s both";
+  })
+  
+  sendBtn.addEventListener("click", () => {
+  let msg = document.getElementById('whats-in').value;
+  let relmsg = msg.replace(/ /g,"%20");
+    //just change the numbers "1515551234567" for your number. Don't use +001-(555)1234567     
+   window.open('https://wa.me/13472631455?text='+relmsg, '_blank'); 
+  
+  });
+
+  setTimeout(() => {
+    popup.classList.toggle('is-active-whatsapp-popup');
+  }, 3000);
+}
+
+popupWhatsApp();
+
+	</script>
+</body>
+</html>
