@@ -1,0 +1,93 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html 
+{ background: #f8f8f8 }
+
+body {
+  margin: auto;
+  width: 400px;
+}
+
+a {
+  position: relative;
+  display: inline-block;
+  margin: 20px 0px 20px 20px;
+  height: 26px;
+  font: bold 12px/26px Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  text-transform: lowercase;
+  text-align: center;
+  color: #666;
+  -webkit-transition: margin 250ms ease-in;
+  -moz-transition: margin 250ms ease-in;
+  -o-transition: margin 250ms ease-in;
+  transition: margin 250ms ease-in;
+}
+
+.text {
+  position: relative;
+  z-index: 4;
+  padding: 5px 15px;
+  border: 1px solid #bbb;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-right-color: #c40f51;
+  height: 26px;
+  background: #fff -webkit-linear-gradient(top, #fff 0%, #eee 100%);
+  background: #fff -moz-linear-gradient(top, #fff 0%, #eee 100%);
+  background: #fff linear-gradient(top, #fff 0%, #eee 100%);
+  box-shadow: 0 0 10px #eee inset, 
+    					1px 1px 1px  rgba(0,0,0,.1);
+}
+
+.count {
+  position: absolute;
+  z-index: 3;
+  right: -9px;
+  top: 1px;
+  display: block;
+  padding-right: 5px;
+  border: 1px solid #c40f51;
+  width: 45px;
+  height: 24px;
+  background: #e74280 -webkit-linear-gradient(top, #fb5c98 0%, #d83b76 100%);
+  background: #e74280 -moz-linear-gradient(top, #fb5c98 0%, #d83b76 100%);
+  background: #e74280 linear-gradient(top, #fb5c98 0%, #d83b76 100%);
+  color: #fff;
+  box-shadow: 0 0 4px 1px rgba(255,255,255,.3) inset,
+   					 -1px 1px 0 0 rgba(255,255,255,.2) inset;
+  -webkit-transition: right 250ms ease-in;
+  -moz-transition: right 250ms ease-in;
+  transition: right 250ms ease-in;
+}
+
+.count::before,
+.count::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  right: 0px;
+  top: -1px;
+  display: block;
+  border: 12px solid transparent;
+  border-right: 8px solid #99093d;
+  border-left: 0;
+  width: 0;
+  height: 0;
+}
+
+.count::after {
+  z-index: 2;
+  right: -1px;
+  border-right-color: #f8f8f8;
+}
+
+a:hover 
+{ margin-right: 30px }
+
+a:hover .count 
+{ right: -40px }
