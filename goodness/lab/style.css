@@ -1,0 +1,54 @@
+html,body {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.sidenav {
+    height: 100%;
+    width: 150px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav:hover{
+  width: 400px;
+  overflow-x: visible;
+}
+
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 1.0em;
+    color: #fff;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.frameContainer{
+    position: fixed; 
+    height: 100%;
+    top:0px;
+    left: 150px;
+    right:0px;
+    bottom:0px;
+    z-index:1;
+}
+
+.main_iframe{
+    height: 100%;
+    width: 100%;
+    border:none;
+    background:#fff;
+}
