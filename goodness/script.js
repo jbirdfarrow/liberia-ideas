@@ -1,6 +1,6 @@
 var websites = JSON.parse(window.localStorage.getItem('spider-web-list'));
 if (websites == null || websites.length == 0) {
-  websites = ['https://chat.openai.com/chat?spider_tab_iframe'];
+  websites = ['https://web.whatsapp.com/?spider_tab_iframe'];
 }
 
 var widthList = JSON.parse(window.localStorage.getItem('spider-web-list-width'));
